@@ -3,7 +3,6 @@ USB Keyboard Skeleton
 This repository includes a skeleton for implementing a USB keyboard
 on a Teensy (Atmel AT90USB1286), compiled on Linux.
 
-
 Documentation for the Atmel part and USB devices:
 
 * [Atmel AT90USB64/128 Datasheet](www.atmel.com/images/doc7593.pdf)
@@ -31,6 +30,7 @@ on the AT90USB1286:
 3. at any time when interrupts are enabled.
 
 This skeleton uses the third technique.
+As committed, the skeleton simply sends the keycode for 'h' every second.
 
 
 You'll need to have the Arduino build environment installed, as well
@@ -53,7 +53,7 @@ teensy\_loader\_cli
     make
     sudo cp teensy_loader_cli /usr/local/bin/
 
-teensy\_loader\_cli requires a 'UDEV' rule to access the USB port without
+teensy\_loader\_cli requires a UDEV rule to access the USB port without
 root access.  You can install this directly by:
 
     sudo curl -s https://www.pjrc.com/teensy/49-teensy.rules > /etc/udev/rules.d/49-teensy.rules
@@ -69,6 +69,6 @@ Building
 Debugging
 ---------
 
-    lsusb
-    dmesg -w
-    tcpdump -I usbmon0
+    lsusb                   ## list USB devices
+    dmesg -w                ## trace USB discovery
+    tcpdump -xx -i usbmon0  ## trace USB messages
