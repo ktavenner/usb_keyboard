@@ -71,4 +71,4 @@ load:
 ### header dependencies
 
 ./main.o : common.h
-./usb.o : common.h
+./usb.o : common.h identity.h

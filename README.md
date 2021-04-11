@@ -9,6 +9,7 @@ Documentation for the Atmel part and USB devices:
 * [Universal Serial Bus Specification, Revision 2.0](http://www.usb.org/developers/docs/usb20_docs/usb_20_033017.zip) (see usb_20.pdf)
 * [Device Class Definition for Human Interface Devices (HID), Version 1.11](http://www.usb.org/developers/hidpage/HID1_11.pdf)
 * [HID Usage Tables, Version 1.12](http://www.usb.org/developers/hidpage/Hut1_12v2.pdf)
+* [USB in a Nutshell](https://www.beyondlogic.org/usbnutshell/usb1.shtml)
 
 
 USB keyboards report the state of the keys in one of three formats:
@@ -69,6 +70,10 @@ Building
 Debugging
 ---------
 
+https://www.kernel.org/doc/Documentation/usb/usbmon.txt
+
     lsusb                   ## list USB devices
     dmesg -w                ## trace USB discovery
+
+    modprobe usbmon
     tcpdump -xx -i usbmon0  ## trace USB messages
